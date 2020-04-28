@@ -10,7 +10,7 @@ public class Test0422 {
 	private int arrow = 0;
 	
 	public int robot() {
-		
+		System.out.println("asdas");
 		for(int i=0; i<move.length; i++) {
 			if(move[i].equals("right")) {
 				arrow+=1;
