@@ -2,59 +2,58 @@ package programmers.test2;
 
 public class Test0422 {
 
-	private int[][] office = new int[][] {{5,-1,4},{6,3,-1},{2,-1,1}};
-	private int r= 1;
-	private int c =0;
-	private String[] move = new String[] {"go","go","right","go","right","go","left","go"};
-	private int answer =0;
-	private int arrow = 0;
 	
-	public int robot() {
-		System.out.println("asdas");
-		for(int i=0; i<move.length; i++) {
-			if(move[i].equals("right")) {
-				arrow+=1;
-				if(arrow==3) {
-					arrow=0;
-				}
-			}
-			else if(move[i].equals("left")) {
-				arrow-=1;
-				if(arrow==-1) {
-					arrow=3;
-				}
-			}
-			solution(r,c,arrow);
-		}
-		System.out.println(answer);
-		
-		return answer;
-	}
 	
-	public void solution(int r, int c, int d) {
-		answer += office[r][c];
+	public int robot(int [][] office, int r, int c, String[] move) {
+		int result=office[r][c];
 		office[r][c]=0;
-		
-		choice(r,c,d);
-	}
-	
-	public void choice(int r, int c, int d) {
-		int[] leftLocation = left(r,c,d);
-		int leftX = leftLocation[0];
-		int leftY = leftLocation[1];
-		
-		
-		
-	}
-	
-	public int[] left(int r, int c, int d) {
-		switch(d) {
-			case 0 : c--; break;
-			case 1 : r--; break;
-			case 2 : c++; break;
-			case 3 : r++; break;
+		String flag[]= {"북","동","남","서"};
+		int flag2=0;
+		int r1=r;
+		int c1=c;
+		for(int i=0;i<move.length;i++){
+			if(move[i].equals("right"))
+				flag2=flag2+1;
+			else if(move[i].equals("left"))
+				flag2=flag2-1;
+			
+			if(flag2==4)
+				flag2=0;
+			if(flag2==-1)
+				flag2=3;
+			
+			if(move[i].equals("go")){
+				switch(flag[flag2]) {
+				case "북":
+					r1=r1-1;
+					break;
+				case "동":
+					c1=c1+1;
+					break;
+				case "남":
+					r1=r1+1;
+					break;
+				case "서":
+					c1=c1-1;
+					break;
+				}
+			}
+			
+			if(r1!=-1&&c1!=-1&&office[r1][c1]!=-1){
+				r=r1;
+				c=c1;
+			}
+			else {
+				r1=r;
+				c1=c;
+			}
+			
+			if(office[r][c]>0){
+				result+=office[r][c];
+				office[r][c]=0;
+			}
 		}
-		return new int[] {r,c};
+		return result;
 	}
 }
 
