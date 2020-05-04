@@ -11,6 +11,7 @@ public class robot {
       
    }
    public int dust(int[][] office,int r,int c,String[] move) {
+	  System.out.println(office);
       int result=office[r][c];
       office[r][c]=0;
       String flag[]= {"북","동","남","서"};

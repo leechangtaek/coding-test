@@ -3,7 +3,7 @@ package programmers.test2;
 public class Test0422 {
 
 	
-	
+	//로봇청소기 문제
 	public int robot(int [][] office, int r, int c, String[] move) {
 		int result=office[r][c];
 		office[r][c]=0;

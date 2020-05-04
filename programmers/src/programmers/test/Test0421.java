@@ -6,7 +6,10 @@ public class Test0421 {
 
 	Scanner sc = new Scanner(System.in);
 	
+	
+	//자물쇠 문제
 	public int solution(String p, String s) {
+		
 		int answer =0;
 		
 		int a[] = new int[p.length()];
