@@ -1,4 +1,4 @@
-package programmers2.test;
+package programmers.test10;
 
 import java.util.Arrays;
 
@@ -47,7 +47,7 @@ public class Solution {
 		System.out.println(Arrays.deepToString(land));
 		answer = land[land.length-1][land[0].length-1];
 		
-		
+	
 		return answer;
 	}
 

@@ -1,4 +1,4 @@
-package programmers.test;
+package programmers.test01;
 
 public class Run {
 

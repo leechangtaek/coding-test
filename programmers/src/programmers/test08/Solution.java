@@ -1,4 +1,4 @@
-package programmers.test8;
+package programmers.test08;
 
 import java.util.Arrays;
 

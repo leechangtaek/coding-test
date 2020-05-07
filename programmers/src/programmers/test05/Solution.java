@@ -1,4 +1,4 @@
-package programmers.test5;
+package programmers.test05;
 
 public class Solution {
 
