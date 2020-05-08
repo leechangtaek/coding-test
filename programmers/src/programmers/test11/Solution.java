@@ -1,5 +1,8 @@
 package programmers.test11;
 
+/*
+ * 피보나치수열
+ */
 public class Solution {
 
 	public static void main(String[] args) {
