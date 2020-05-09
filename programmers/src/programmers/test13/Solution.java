@@ -23,15 +23,16 @@ public class Solution {
 		
 		int a = 78;
 		int b = 15;
-		
-		System.out.println("결과:"+s.solution(a));
-		System.out.println("결과:"+s.solution(b));
+		String a1 = "1234/";
+		System.out.println(a1.indexOf("/"));
+//		System.out.println("결과:"+s.solution(a));
+//		System.out.println("결과:"+s.solution(b));
 	}
 	public int solution(int n) {
 		int count = Integer.bitCount(n); // n을 이진수 한다음에 1의갯수 4개
 		String aa = Integer.toBinaryString(n); // n을 이진수한거  1001110
-		System.out.println(aa);
-		System.out.println(count);
+//		System.out.println(aa);
+//		System.out.println(count);
 		
 		for(int i=n+1; ; i++) {
 			int count1 = Integer.bitCount(i);
