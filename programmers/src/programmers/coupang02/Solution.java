@@ -17,9 +17,9 @@ public class Solution {
 		int f = 1234;
 		//Wow
 		
-		System.out.println("결과:"+s.solution(a, b));
-		System.out.println("결과:"+s.solution(c, d));
-		System.out.println("결과:"+s.solution(e, f));
+		System.out.println("결과:"+Arrays.toString(s.solution(a, b)));
+		System.out.println("결과:"+Arrays.toString(s.solution(c, d)));
+		System.out.println("결과:"+Arrays.toString(s.solution(e, f)));
 		
 	}
 	public String[] solution(String[] rooms, int target) {
@@ -36,9 +36,6 @@ public class Solution {
 			
 			
 		}
-		for(int i=0; i<arr.length; i++) {
-			Arrays.sort(arr);
-		}
 		//같은이름이나, 같은 방에 있는 이름을 빼야함
 		
 		for(int i=0; i<arr.length; i++) {
@@ -47,15 +44,15 @@ public class Solution {
 				bArr=sArr[i].split(",");
 			}
 		}
-//		for(int i=0; i<sArr.length; i++) {
-//			if(arr[i]!=0) {
-//				answer[i]=sArr[i];
-//			}
+//		//arr을 순서대로
+//		for(int i=0; i<arr.length; i++) {
+//			Arrays.sort(arr);
 //		}
 		
-		System.out.println(Arrays.toString(arr));
-		System.out.println(Arrays.toString(sArr));
-		System.out.println(Arrays.toString(bArr));
+		
+		System.out.println(Arrays.toString(arr));//절대값
+		System.out.println(Arrays.toString(sArr));//이름만
+		System.out.println(Arrays.toString(bArr));//같은방이름
 		
 		return answer;
 //		String []answer = {};
