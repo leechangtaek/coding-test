@@ -49,8 +49,8 @@ public class Solution {
 //			Arrays.sort(arr);
 //		}
 		
-		
 		System.out.println(Arrays.toString(arr));//절대값
+		
 		System.out.println(Arrays.toString(sArr));//이름만
 		System.out.println(Arrays.toString(bArr));//같은방이름
 		
