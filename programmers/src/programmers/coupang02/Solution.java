@@ -35,6 +35,7 @@ public class Solution {
 			//이름만
 			sArr[i]= rooms[i].substring(rooms[i].indexOf("]")+1,rooms[i].length());
 		}
+		//순서
 		for(int i=0; i<arr.length; i++) {
 			for(int j=0; j<arr.length; j++) {
 				if(arr[i]<arr[j]) {
@@ -48,11 +49,12 @@ public class Solution {
 				}
 			}
 		}
-		//같은이름이나, 같은 방에 있는 이름을 빼야함
 		String noRoom = "";
+		
+		//다른방이름
 		for(int i=0; i<arr.length; i++) {
 			if(arr[i]!=0) {
-				//같은방이름
+				
 				if(sArr[i].contains(",")) {
 					bArr+=sArr[i];
 					if(i!=arr.length-1) {
