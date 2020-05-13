@@ -1,6 +1,7 @@
 package programmers.coupang02;
 
 import java.util.Arrays;
+import java.util.HashMap;
 
 public class Solution {
 
@@ -27,76 +28,92 @@ public class Solution {
 		
 		int [] arr = new int[rooms.length];
 		String[] sArr = new String [rooms.length];
-		String[] bArr = {};
+		String bArr = "";
 		for(int i=0; i<rooms.length; i++) {
 			//절대값
 			arr[i]=Math.abs(Integer.parseInt(rooms[i].substring(1,rooms[i].indexOf("]")))-target);
 			//이름만
 			sArr[i]= rooms[i].substring(rooms[i].indexOf("]")+1,rooms[i].length());
-			
-			
 		}
-		//같은이름이나, 같은 방에 있는 이름을 빼야함
-		
 		for(int i=0; i<arr.length; i++) {
-			if(arr[i]==0) {
-				//같은방이름
-				bArr=sArr[i].split(",");
+			for(int j=0; j<arr.length; j++) {
+				if(arr[i]<arr[j]) {
+					int temp = arr[i];
+					arr[i] = arr[j];
+					arr[j]= temp;
+					
+					String temp1 = sArr[i];
+					sArr[i] = sArr[j];
+					sArr[j] = temp1;
+				}
 			}
 		}
-//		//arr을 순서대로
-//		for(int i=0; i<arr.length; i++) {
-//			Arrays.sort(arr);
-//		}
+		//같은이름이나, 같은 방에 있는 이름을 빼야함
+		String noRoom = "";
+		for(int i=0; i<arr.length; i++) {
+			if(arr[i]!=0) {
+				//같은방이름
+				if(sArr[i].contains(",")) {
+					bArr+=sArr[i];
+					if(i!=arr.length-1) {
+						bArr+=",";
+					}
+				}else {
+					bArr+=sArr[i];
+				}
+			}else {
+				noRoom=sArr[i];
+			}
+		}
+//		System.out.println(noRoom);
+		String name [] = {};
+		for(int i=0; i<bArr.length(); i++) {
+			name=bArr.split(",");
+		}
+		HashMap<String, Integer> map = new HashMap();
+		for(String human : name) {
+			map.put(human, map.getOrDefault(human, 0)+1);
+			if(human.equals(noRoom)) {
+				map.remove(noRoom);
+			}
+		}
+		String answer1="";
+		String[] answer2 = {};
+		String answer3 = "";
+		for(String key : map.keySet()) {
+			if(map.get(key)==1) {
+				answer1+=key+",";
+			}
+			answer2= answer1.split(",");
+			Arrays.sort(answer2);
+		}
+		for(int i=0; i<answer2.length; i++) {
+			answer3+=answer2[i];
+			if(i!=answer2.length-1) {
+				answer3+=",";
+			}
+		}
+		for(String key : map.keySet()) {
+			if(map.get(key)!=1) {
+				answer3+=","+key;
+			}
+			answer=answer3.split(",");
+		}
 		
-		System.out.println(Arrays.toString(arr));//절대값
 		
-		System.out.println(Arrays.toString(sArr));//이름만
-		System.out.println(Arrays.toString(bArr));//같은방이름
+//		System.out.println(answer3);
+//		System.out.println(Arrays.toString(answer));//절대값
+//		System.out.println(map);
+//		
+//		
+//		System.out.println(Arrays.toString(arr));//절대값
+//		System.out.println(Arrays.toString(sArr));//이름만
+//		System.out.println(bArr);
+//		System.out.println(Arrays.toString(name));//같은방이름
 		
 		return answer;
-//		String []answer = {};
-//		String[] answer11 = {};
-//		String ansewr1 = new String();
-//		int flag = 0;
-//		int abs;
-//		int j=0;
-//		int [] roomnum = new int[rooms.length];
-//		
-//		for(int i=0; i<rooms.length; i++) {
-//			if(Integer.parseInt(rooms[i].substring(1,rooms[i].indexOf(']')))-target>0) {
-//				roomnum[j++]=Integer.parseInt(rooms[i].substring(1,rooms[i].indexOf(']')))-target;
-//			}else {
-//				roomnum[j++]=target-Integer.parseInt(rooms[i].substring(1,rooms[i].indexOf(']')));
-//			}
-//		}
-//		for(int i=0; i<roomnum.length; i++) {
-//			for(j=0; j<roomnum.length; j++) {
-//				if(roomnum[i]<roomnum[j]) {
-//					int tmp = roomnum[i];
-//					roomnum[i]=roomnum[j];
-//					roomnum[j]=tmp;
-//				}
-//			}
-//		}
-//		for(int i=0; i<roomnum.length; i++) {
-//			for(j=0; j<rooms.length; j++) {
-//				if(Integer.parseInt(rooms[i].substring(1,rooms[i].indexOf(']')))-target>0) {
-//					abs=Integer.parseInt(rooms[i].substring(1,rooms[i].indexOf(']')))-target;
-//				}else {
-//					abs=target-Integer.parseInt(rooms[i].substring(1,rooms[i].indexOf(']')));
-//				}
-//				if(roomnum[i]!=0&&abs==roomnum[i]) {
-//					answer11= rooms[i].substring(rooms[i].indexOf(']')+1).split(",");
-//					ansewr1+=","+(rooms[i].substring(rooms[i].indexOf(']')+1));
-//					continue;
-//				}
-//			}
-//			answer=ansewr1.split(",");
-//		}
-//		System.out.println(Arrays.toString(answer11));
-//		
-//		return answer;
+		
+		
 		
 	}
 
