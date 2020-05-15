@@ -52,6 +52,8 @@ public class Solution {
 				playMap.put(key, plays[i]);
 			}
 		}
+		System.out.println(genresMap);
+		System.out.println(playMap);
 
 		int mCnt = 0;
 		Iterator it = sortByValue(playMap).iterator();
