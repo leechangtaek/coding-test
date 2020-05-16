@@ -46,6 +46,7 @@ public class Solution {
 			}
 		}
 		
+		
 //		stack안쓰기
 //		for(int i=0; i<heights.length; i++) {
 //			for(int j=i+1; j<heights.length; j++) {
@@ -54,7 +55,6 @@ public class Solution {
 //				}
 //			}
 //		}
-		
 		return answer;
 		
 	}
