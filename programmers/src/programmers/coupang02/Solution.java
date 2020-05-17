@@ -102,11 +102,9 @@ public class Solution {
 			answer=answer3.split(",");
 		}
 		
-		
 //		System.out.println(answer3);
 //		System.out.println(Arrays.toString(answer));//절대값
 //		System.out.println(map);
-//		
 //		
 //		System.out.println(Arrays.toString(arr));//절대값
 //		System.out.println(Arrays.toString(sArr));//이름만
