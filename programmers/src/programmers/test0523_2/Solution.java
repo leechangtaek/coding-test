@@ -40,7 +40,6 @@ public class Solution {
 		System.out.println(answer1);
 	    answer = answer1.get((int) p-1);
 		
-		
 		return answer;
 		
 	}
