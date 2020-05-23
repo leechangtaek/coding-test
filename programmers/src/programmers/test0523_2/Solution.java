@@ -22,7 +22,6 @@ public class Solution {
 		long answer = 0;
 		int [] arr = new int[(int) p];
 		
-		
 		for(int i=0; i<p; i++) {
 			arr[i] =(int) Math.pow(3, i);
 		}
