@@ -17,7 +17,6 @@ public class Solution {
 		System.out.println("결과:"+s.solution(b));
 	}
 	public int solution(int p) {
-		int answer = 0;
 		
 		for(int i=p+1; ; i++) {
 			String a = i+"";
