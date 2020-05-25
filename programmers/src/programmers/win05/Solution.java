@@ -2,7 +2,7 @@ package programmers.win05;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.List;
+import java.util.List;;
 
 public class Solution {
 
@@ -16,11 +16,16 @@ public class Solution {
 		System.out.println("결과:"+Arrays.toString(s.solution(b)));
 	}
 	public int[] solution(int[] waiting) {
-		int answer[];
-		List<Integer> li = new ArrayList<>();
-		for(int i=0; i<waiting.length; i++) {
-			if(!li.contains(waiting[i])) {
-				li.add(waiting[i]);
+//		for(int i=0; i<waiting.length; i++) {
+//			if(!li.contains(waiting[i])) {
+//				li.add(waiting[i]);
+//			}
+//		}
+		int answer[]= {};
+		List li = new ArrayList();
+		for(int num : waiting) {
+			if(!li.contains(num)) {
+				li.add(num);
 			}
 		}
 		answer = new int[li.size()];
@@ -28,8 +33,8 @@ public class Solution {
 			answer[i] = (int)li.get(i);
 		}
 
-
 		return answer;
+		
 	}
 
 

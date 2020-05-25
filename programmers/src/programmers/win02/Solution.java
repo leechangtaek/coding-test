@@ -1,6 +1,7 @@
 package programmers.win02;
 
-import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Solution {
 
@@ -22,33 +23,49 @@ public class Solution {
 		System.out.println("결과:"+s.solution(f));
 	}
 	public int solution(int[] arr) {
+//		int answer = 0;
+//		LinkedList<Integer> li = new LinkedList<>();
+//		for(int i=0; i<arr.length; i++) {
+//			for(int j=i+1; j<arr.length; j++) {
+//				if(arr[i]==arr[j]) {
+//					li.add(j-i);
+//				}
+//			}
+//		}
+//		Collections.sort(li);
+//		if(li.isEmpty()) {
+//			answer=-1;
+//		}else {
+//			answer=li.get(0);
+//		}
+//		System.out.println(li);
+//		
+//		
+//		return answer;
 		
-        int[] count = new int[arr.length];
-        int flag= 0;
-        
-        for(int i=0; i<arr.length; i++) {
-        	for(int j=i+1; j<arr.length; j++) {
-        		if(arr[i]==arr[j]) {
-        			count[i]=j-i;
-        			break;
-        		}
-        	}
-        }
-        int answer = count[0];
-        for(int i=0; i<arr.length; i++) {
-        	if(count[i]!=0 && answer>count[i]) {
-        		answer=count[i];
-        	}
-        	if(count[i]==0) {
-        		flag++;
-        	}
-        }
-        if(flag==count.length) {
-        	answer=-1;
-        }
-        System.out.println(Arrays.toString(count));
-        
-        return answer;
+		int answer = -1;
+
+		Map<Integer,Integer> map = new HashMap<>();
+		int min = Integer.MAX_VALUE;
+		for(int i=0;i<arr.length;i++) {
+			if(map.get(arr[i]) == null) {
+				map.put(arr[i], i);
+			}else {
+				int n = map.get(arr[i]);
+				if(min > i-n) {
+					min = i - n;
+				}else {
+					map.put(arr[i], i);
+				}
+			}
+		}
+		System.out.println(map);
+		if(min != Integer.MAX_VALUE) {
+			answer = min;
+		}
+
+		return answer;
+		
     }
 	
 	
