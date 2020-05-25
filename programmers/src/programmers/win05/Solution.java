@@ -22,12 +22,19 @@ public class Solution {
 //			}
 //		}
 		int answer[]= {};
-		List li = new ArrayList();
+		ArrayList<Integer> li = new ArrayList<Integer>();
+//		for(int num : waiting) {
+//			if(!li.contains(num)) {
+//				li.add(num);
+//			}
+//		}
+		int a = waiting[0];
+		li.add(a);
 		for(int num : waiting) {
-			if(!li.contains(num)) {
-				li.add(num);
-			}
-		}
+			if(a != num)
+                li.add(num);
+            a = num;
+        }    
 		answer = new int[li.size()];
 		for(int i=0; i<li.size(); i++) {
 			answer[i] = (int)li.get(i);
