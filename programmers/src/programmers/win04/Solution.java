@@ -47,8 +47,6 @@ public class Solution {
 	         decrypt[index] = ch;
 	      }
 	      answer = String.valueOf(decrypt);
-//	     
-	      
 	      return answer;
     }
 	
