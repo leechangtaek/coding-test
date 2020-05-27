@@ -21,6 +21,7 @@ public class Solution {
 //				li.add(waiting[i]);
 //			}
 //		}
+		
 		int answer[]= {};
 		ArrayList<Integer> li = new ArrayList<Integer>();
 //		for(int num : waiting) {
