@@ -32,7 +32,6 @@ public class Solution {
 		return true;
 	}
 
-
 }
 /**
  * private static int getResult(String input_Str) {
