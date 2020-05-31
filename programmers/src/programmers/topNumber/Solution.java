@@ -36,7 +36,6 @@ public class Solution {
         	answer+=arr[i];
         }
         
-        System.out.println(Arrays.toString(arr));
         return answer;
     }
 
