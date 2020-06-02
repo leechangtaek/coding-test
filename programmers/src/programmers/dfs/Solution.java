@@ -18,7 +18,6 @@ public class Solution {
 		
 		return answer;
 	}
-	
 	private int dfs(int[] numbers, int node, int sum, int target) {
 		if(node==numbers.length) {
 			if(sum==target) {
