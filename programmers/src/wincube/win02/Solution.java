@@ -2,7 +2,9 @@ package wincube.win02;
 
 import java.util.HashMap;
 import java.util.Map;
-
+/*
+ * 짧은 시간안에 당첨된 사람 없으면 -1
+ */
 public class Solution {
 
 	public static void main(String[] args) {

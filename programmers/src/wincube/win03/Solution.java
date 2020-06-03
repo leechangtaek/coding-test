@@ -1,7 +1,11 @@
 package wincube.win03;
 
 import java.util.Arrays;
-
+/**
+ * 팰린드롬이 되기 위해 알파벳을 추가한 후 글자의 개수
+ * @author ichangtaeg
+ *
+ */
 public class Solution {
 
 	public static void main(String[] args) {
