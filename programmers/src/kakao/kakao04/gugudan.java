@@ -13,6 +13,7 @@ public class gugudan {
 				}
 				System.out.print(" = "+(int)Math.pow(i, j));
 				System.out.println("");
+				
 			}
 		}
 	}
