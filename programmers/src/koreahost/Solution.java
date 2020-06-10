@@ -106,7 +106,6 @@ public class Solution {
 		List name = new ArrayList(cnt);
 		List date = new ArrayList(cnt);
 		List result = new ArrayList(cnt);
-		List resultCnt = new ArrayList(cnt);
 		
 		for(int i=0; i<cnt; i++) {
 			JSONObject ob = (JSONObject)jArr.get(i);
@@ -123,22 +122,21 @@ public class Solution {
 			}
 		}
 		Collections.sort(name1);
-		int [] hab = new int[name1.size()];
-		int [] boolhab = new int[name1.size()];
+		int [] pass = new int[name1.size()];
+		int [] failure = new int[name1.size()];
 		
 		for(int i=0; i<result.size(); i++) {
 			for(int j=0; j<name1.size(); j++) {
 				if(name.get(i).equals(name1.get(j)) && result.get(i).equals("합격")) {
-					hab[j]++;
+					pass[j]++;
 				}else if(name.get(i).equals(name1.get(j)) && result.get(i).equals("불합격")){
-					boolhab[j]++;
+					failure[j]++;
 				}
 			}
 		}
-		System.out.println(Arrays.toString(hab));
-		System.out.println("지원자   |합격자수   |불합격자수");
+		System.out.println("지원자   |합격자수  |불합격자수");
 		for(int i=0; i<name1.size(); i++) {
-			System.out.println(name1.get(i)+  "|"+hab[i]+  "  |"+boolhab[i]);
+			System.out.println(name1.get(i)+" |"+pass[i]+  "       |"+failure[i]);
 		}
 		
 		List date1 = new ArrayList<>();
@@ -149,21 +147,21 @@ public class Solution {
 		}
 		date1.add("2020-03");
 		Collections.sort(date1);
-		int [] hab1 = new int[date1.size()];
-		int [] boolhab1 = new int[date1.size()];
+		int [] pass1 = new int[date1.size()];
+		int [] failure1 = new int[date1.size()];
 		
 		for(int i=0; i<result.size(); i++) {
 			for(int j=0; j<date1.size(); j++) {
 				if(date.get(i).equals(date1.get(j)) && result.get(i).equals("합격")) {
-					hab1[j]++;
+					pass1[j]++;
 				}else if(date.get(i).equals(date1.get(j)) && result.get(i).equals("불합격")){
-					boolhab1[j]++;
+					failure1[j]++;
 				}
 			}
 		}
-		System.out.println("월   |합격자수   |불합격자수");
+		System.out.println("월         |합격자수   |불합격자수");
 		for(int i=0; i<date1.size(); i++) {
-			System.out.println(date1.get(i)+  "|"+hab1[i]+  "  |"+boolhab1[i]);
+			System.out.println(date1.get(i)+  "   |"+pass1[i]+  "        |"+failure1[i]);
 		}
 		
 		List company1 = new ArrayList<>();
@@ -174,13 +172,13 @@ public class Solution {
 		}
 		int [] sup = new int[company1.size()];
 		Collections.sort(company1);
-		int [] hab2 = new int[company1.size()];
-		int [] habrool = new int[company1.size()];
+		int [] pass2 = new int[company1.size()];
+		int [] passrool = new int[company1.size()];
 		
 		for(int i=0; i<result.size(); i++) {
 			for(int j=0; j<company1.size(); j++) {
 				if(company.get(i).equals(company1.get(j)) && result.get(i).equals("합격")) {
-					hab2[j]++;
+					pass2[j]++;
 				}
 				if(company.get(i).equals(company1.get(j))){
 					sup[j]++;
@@ -189,7 +187,7 @@ public class Solution {
 		}
 		System.out.println("회사   |지원자수   |합격률");
 		for(int i=0; i<company1.size(); i++) {
-			System.out.println(company1.get(i)+  "|"+sup[i]+  "  |"+Math.round(((double)hab2[i]/(double)sup[i])*100)+"%");
+			System.out.println(company1.get(i)+"  |"+sup[i]+"        |"+Math.round(((double)pass2[i]/(double)sup[i])*100)+"%");
 		}
 	}
 
