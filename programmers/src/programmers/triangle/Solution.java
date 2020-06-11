@@ -25,14 +25,14 @@ public class Solution {
         	arr[i][0] = arr[i-1][0]+triangle[i][0];
         	arr[i][i] = arr[i-1][i-1]+triangle[i][i];
         }
-        System.out.println(Arrays.deepToString(arr));
+//        System.out.println(Arrays.deepToString(arr));
         
         for(int i=2; i<n; i++) {
         	for(int j=1; j<i; j++) {
         		arr[i][j] = Math.max(arr[i-1][j-1], arr[i-1][j]) + triangle[i][j];
         	}
         }
-        System.out.println(Arrays.deepToString(arr));
+//        System.out.println(Arrays.deepToString(arr));
         
         for(int i=0; i<n; i++) {
         	if(max <arr[n-1][i]) {
