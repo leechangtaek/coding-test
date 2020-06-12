@@ -38,9 +38,9 @@ public class Solution {
         for (int i = 0; i < n; i++) num = 10 * num + _N; // NNNN만들기.
         TreeSet<Integer> temp = new TreeSet<>();
         temp.add(num);
-        System.out.println(num);
         for(int i =1; i<n;i++){
             int j = n-i;
+            System.out.println(j);
             TreeSet<Integer> from = solve(i);
             TreeSet<Integer> to = solve(j);
             for(int n1:from) {
@@ -51,6 +51,7 @@ public class Solution {
                     if(n2 != 0) temp.add(n1 / n2);
                 }
             }
+            System.out.println(temp);
         }
         return dynamic[n]= temp;
     }
