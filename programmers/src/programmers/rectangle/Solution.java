@@ -31,6 +31,7 @@ public class Solution {
 				}
 			}
 		}
+		System.out.println(Arrays.deepToString(arr));
 		
 		for(int i=1; i<arr.length; i++) {
 			for(int j=1; j<arr[0].length; j++) {
@@ -41,12 +42,10 @@ public class Solution {
 					arr[i][j]=min+1;
 					answer = Math.max(answer, arr[i][j]);
 				}
-				System.out.println(answer);
 			}
 		}
 		
 		
-		System.out.println(Arrays.deepToString(board));
 		
 		return answer*answer;
 	}
