@@ -1,5 +1,7 @@
 package programmers.star;
 
+import java.util.Scanner;
+
 public class Solution {
 
 	public static void main(String[] args) {
@@ -7,9 +9,9 @@ public class Solution {
 		Solution s = new Solution();
 //		s.solution();
 //		s.solution2();
-//		s.solution3();
+		s.solution3();
 //		s.solution4();
-		s.solution5();
+//		s.solution5();
 		
 		
 		
@@ -52,7 +54,7 @@ public class Solution {
 	 * **** 
 	 */
 	public void solution3() {
-		for(int i=0; i<5; i++) {
+		for(int i=1; i<5; i++) {
 			for(int j=4; j>0; j--) {
 				if(i<j) {
 					System.out.print(" ");
@@ -89,20 +91,23 @@ public class Solution {
          *   
 	 */
 	public void solution5() {
-		for(int i=0; i<5; i++) {
-			for(int j=0; j<5; j++) {
-				if(i<=5/2) {
-					if(i+j<=5/2-1) {
+		Scanner sc = new Scanner(System.in);
+		System.out.println("홀수를 입력해주세요");
+		int num = sc.nextInt();
+		for(int i=0; i<num; i++) {
+			for(int j=0; j<num; j++) {
+				if(i<=num/2) {
+					if(i+j<=num/2-1) {
 						System.out.print(" ");
-					}else if(j-i>=5/2+1) {
+					}else if(j-i>=num/2+1) {
 						System.out.print(" ");
 					}else {
 						System.out.print("*");
 					}
-				}else if(i>5/2) {
-					if(i-j>=5/2+1) {
+				}else if(i>num/2) {
+					if(i-j>=num/2+1) {
 						System.out.print(" ");
-					}else if(i+j>=2*3+1) {
+					}else if(i+j>=num/2*3+1) {
 						System.out.print(" ");
 					}else {
 						System.out.print("*");
