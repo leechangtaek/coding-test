@@ -49,6 +49,8 @@ public class Solution {
 				}
 			}
 		}
+//		System.out.println(Arrays.toString(arr));
+//		System.out.println(Arrays.toString(sArr));
 		String noRoom = "";
 		
 		//다른방이름
@@ -67,6 +69,8 @@ public class Solution {
 				noRoom=sArr[i];
 			}
 		}
+		System.out.println(bArr);
+		System.out.println(noRoom);
 //		System.out.println(noRoom);
 		String name [] = {};
 		for(int i=0; i<bArr.length(); i++) {
