@@ -1,4 +1,4 @@
-package kakao.kakao01;
+ 	package kakao.kakao01;
 
 public class Solution {
 
@@ -30,5 +30,4 @@ public class Solution {
 		
 		
  	}
-
 }

@@ -28,12 +28,9 @@ public class Solution2 {
 	}
 	public String[] solution(String[] rooms, int target) {
 		String[] answer = {};
-		int [] arr = new int[rooms.length];
-		String[] sArr = new String [rooms.length];
 		List<Integer> li = new ArrayList<>();
 		List<String> sli = new ArrayList<>();
 		List<String> noR = new ArrayList<>();
-		String bArr = "";
 		for(int i=0; i<rooms.length; i++) {
 			//절대값
 			li.add(Math.abs(Integer.parseInt(rooms[i].substring(1,rooms[i].indexOf("]")))-target));
@@ -68,18 +65,17 @@ public class Solution2 {
 				hm.put(sli.get(i), 0);
 			}
 		}
+		
+		//hm에 담긴 value값 오름차순 정렬
 		List<String> keySetList = new ArrayList<>(hm.keySet());
 		Collections.sort(keySetList, (o1, o2) -> (hm.get(o1).compareTo(hm.get(o2))));
 		System.out.println(keySetList);
+		
+		
 		answer = new String[keySetList.size()];
 		for(int i=0; i<keySetList.size(); i++) {
 			answer[i] = keySetList.get(i);
 		}
-//		System.out.println(hm);
-//		String answer2 = "";
-//		for(String key: hm.keySet()) {
-//			answer2 = hm.get(key)+",";
-//		}
 		
 		
 		
