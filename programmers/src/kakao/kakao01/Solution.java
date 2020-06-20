@@ -13,7 +13,7 @@ public class Solution {
 		
 		for(int i=0; i<n; i++) {
 			int arr = arr1[i] | arr2[i];
-//			System.out.println(Integer.toBinaryString(arr));
+			System.out.println(Integer.toBinaryString(arr));
 		}
 		
 		for(int i=0; i<n; i++) {
