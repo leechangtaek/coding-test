@@ -58,19 +58,24 @@ public class Solution {
                 	break;
                 }
                 if(lost[i] == reserve[j]){
-                	reserve[j] = -1; rent=true;
+                	reserve[j] = -1; 
+                	rent=true;
                 }
                 else if(lost[i] - reserve[j] == 1 ){
-                	reserve[j] = -1; rent=true;
+                	reserve[j] = -1; 
+                	rent=true;
                 }
                 else if(lost[i] - reserve[j] == -1){
-                	reserve[j] = -1; rent=true;
+                	reserve[j] = -1; 
+                	rent=true;
                 }
                 else{
                 	j++;                      
                 }
             }
-            if(!rent) answer--;
+            if(!rent) {
+            	answer--;
+            }
         }
         return answer;
     }
