@@ -10,6 +10,7 @@ public class solution {
         int ranges[][] = {{0,0},{0,-1},{2,-3},{3,-3}};
         double [] answer = new double[ranges.length];
 
+
         List<Integer> li = new ArrayList<>();
 
         while (k>1){
