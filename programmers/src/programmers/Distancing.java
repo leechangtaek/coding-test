@@ -17,6 +17,7 @@ public class Distancing {
                             , {"PXOPX", "OXOXP", "OXPOX", "OXXOP", "PXPOX"}
                             , {"OOOXX", "XOOOX", "OOOXX", "OXOOX", "OOOOO"}
                             , {"PXPXP", "XPXPX", "PXPXP", "XPXPX", "PXPXP"}};
+
         int answer[]= new int [5];
         room = new char[5][5];
 
@@ -54,14 +55,15 @@ public class Distancing {
             int nx = x + dx[d];
             int ny = y + dy[d];
 
-            //위치가 내부이고 방문을 안했을때
             if(!inBound(nx, ny)) continue;
 
             if(inDistance(ax,ay,nx,ny)){
                 if(room[nx][ny] == 'P'||room[nx][ny] == 'O'){
+                    if(room[nx][ny] == 'P'){
+                        flag = false;
+                        break;
+                    }
                     dfs(nx,ny,ax,ay);
-
-                    if(room[nx][ny] == 'P') flag = false;
                 }
             }
         }
