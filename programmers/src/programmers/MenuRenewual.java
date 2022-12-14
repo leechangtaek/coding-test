@@ -55,6 +55,9 @@ public class MenuRenewual {
                     keyOrder += order[i];
                 }
             }
+            char [] arr = keyOrder.toCharArray();
+            Arrays.sort(arr);
+            keyOrder = new String(arr);
             hm.put(keyOrder,hm.getOrDefault(keyOrder,0)+1);
 //            print(order, visited, n);
 //            return;
