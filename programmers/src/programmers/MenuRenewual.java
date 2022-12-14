@@ -14,7 +14,7 @@ public class MenuRenewual {
         for(int i=0; i<order.length; i++){
             boolean [] visited = new boolean[order[i].length()];
             for(int j=course[0]; j <= order[i].length(); j++){ //제일 낮은 조합, 제일 높은 조합까지
-                rec(order[i].toCharArray(), visited, 0, order[i].length(), j);
+                dfs(order[i].toCharArray(), visited, 0, order[i].length(), j);
             }
         }
         HashMap<Integer, String> hmm = new HashMap<>();
@@ -47,7 +47,7 @@ public class MenuRenewual {
         answer = li.toArray(new String[0]);
         System.out.println(Arrays.toString(answer));
     }
-    public static void rec (char[] order , boolean[] visited, int start, int n ,int r){
+    public static void dfs (char[] order , boolean[] visited, int start, int n ,int r){
         if (r == 0) {
             String keyOrder ="";
             for(int i=0; i<n; i++){
@@ -64,7 +64,7 @@ public class MenuRenewual {
         }
         for (int i = start; i < n; i++) {
             visited[i] = true;
-            rec(order, visited, i + 1, n, r - 1);
+            dfs(order, visited, i + 1, n, r - 1);
             visited[i] = false;
         }
     }
