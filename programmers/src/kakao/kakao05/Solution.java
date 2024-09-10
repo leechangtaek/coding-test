@@ -1,4 +1,4 @@
-package kakao.kakao05;
+package programmers.src.kakao.kakao05;
 
 import java.util.Stack;
 

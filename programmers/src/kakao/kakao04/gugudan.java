@@ -1,4 +1,4 @@
-package kakao.kakao04;
+package programmers.src.kakao.kakao04;
 
 public class gugudan {
 

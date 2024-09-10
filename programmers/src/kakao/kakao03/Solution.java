@@ -1,4 +1,4 @@
-package kakao.kakao03;
+package programmers.src.kakao.kakao03;
 
 import java.util.ArrayList;
 import java.util.LinkedList;

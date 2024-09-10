@@ -1,4 +1,4 @@
- 	package kakao.kakao01;
+package programmers.src.kakao.kakao01;
 
 public class Solution {
 

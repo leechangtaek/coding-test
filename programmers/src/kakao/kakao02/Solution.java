@@ -1,4 +1,4 @@
-package kakao.kakao02;
+package programmers.src.kakao.kakao02;
 
 import java.util.Scanner;
 
