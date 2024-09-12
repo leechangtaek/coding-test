@@ -24,15 +24,14 @@ public class Solution {
         for (String s : report) {
             reportSet.add(s);
         }
-        //2.notifylistHash 만들기
+        //2.notifylistHash 만들기 키 : 신고당한자, 밸류 : 신고자들 리스트
         HashMap<String, ArrayList<String>> notifyListHash = new HashMap<>();
         for(String rep : reportSet){
             int blankIdx = rep.indexOf(" ");
             String reporter = rep.substring(0,blankIdx);
             String reportee = rep.substring(blankIdx+1);
 
-            ArrayList<String> reporterList = notifyListHash.getOrDefault(reportee,null);
-            if(reporterList == null) reporterList = new ArrayList<>();
+            ArrayList<String> reporterList = notifyListHash.getOrDefault(reportee,new ArrayList<>());
 
             reporterList.add(reporter);
             notifyListHash.put(reportee,reporterList);
