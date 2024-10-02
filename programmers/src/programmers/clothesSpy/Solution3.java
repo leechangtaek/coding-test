@@ -34,7 +34,8 @@ public class Solution3 {
 		 for(String s : hm.keySet()){
 			 answer *= hm.get(s)+1;
 		 }
-		 answer -= 1;
+		 answer -= 1; //둘다 none인 경우
+
 		 
 		 return answer;
 	 }
